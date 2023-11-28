@@ -23,8 +23,8 @@ $matches = [
 // var_dump($matches)
 
 $name = $_GET["name"];
-$email= $_GET["email"];
-$age= $_GET["age"];
+$email = $_GET["email"];
+$age = $_GET["age"];
 
 var_dump($name, $email, $age);
 ?>
@@ -46,28 +46,30 @@ var_dump($name, $email, $age);
     <main>
         <div class="container">
             <ul>
-            <?php
-            foreach ($matches as $key) {
-               ?>
-                   <li> <?php echo $key['home'] . '-' . $key['away'] . '|' . $key['score_home'] . '-' . $key['score_away'] ?></li>
-            <?php }
-             ?>
+                <?php
+                foreach ($matches as $key) {
+                ?>
+                    <li> <?php echo $key['home'] . '-' . $key['away'] . '|' . $key['score_home'] . '-' . $key['score_away'] ?></li>
+                <?php }
+                ?>
             </ul>
         </div>
-
-        <form action="index.php" method="GET">
-    <div class="mb-3">
-    <label for="name" class="form-label"> Name</label>
-    <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-    </div>
-    <div class="mb-3">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control" id="email" name="email">
-    <label for="age" class="form-label">Age</label>
-    <input type="text" class="form-control" id="age" name="age">
-    </div>
-    <button type="submit" class="btn btn-primary">Invia</button>
- </form>
+        <div class="container">
+            <form action="second.php" method="GET">
+                <div class="mb-3">
+                    <label for="name" class="form-label"> Name</label>
+                    <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="text" class="form-control" id="age" name="age">
+                </div>
+                <button type="submit" class="btn btn-primary">Invia</button>
+            </form>
+           
+        </div>
     </main>
 
 
