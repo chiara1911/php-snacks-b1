@@ -8,5 +8,10 @@ Olimpia Milano - Cantù | 55-60
 - stampare in html le partite con il relativo punteggio finale.
 # Snack 2
 Con un form passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+
+### MILESTONE :
+- creare form;
+- mettere in php i $_GET relativi a name, email e age;
+
 # Bonus
 Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi <p>. Ogni punto un nuovo paragrafo.
