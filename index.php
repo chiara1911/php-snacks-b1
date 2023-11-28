@@ -4,7 +4,7 @@ $matches = [
     'totalScore' => [
         'home' => 'Carpegna Prosciutto Pesaro',
         'away' => 'Armani Milano',
-        'score_home' => '32',
+        'score_home' => '92',
         'score_away' => '41'
     ],
     [
@@ -29,7 +29,7 @@ $matches = [
 // var_dump($name, $email, $age);
 
 $text = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat architecto possimus, repellat inventore voluptatem officiis id omnis ipsum, sint pariatur sapiente sunt ea minus ad iure est. Sint ad, rem obcaecati quaerat quae suscipit minus placeat. Iste, a culpa consequatur necessitatibus alias provident exercitationem veritatis. Deserunt ea nulla sint nam quia vero corporis minus in. Eligendi mollitia dignissimos inventore adipisci?";
-$paragraph= explode(".", $text);
+$paragraph = explode(".", $text);
 
 ?>
 
@@ -49,11 +49,14 @@ $paragraph= explode(".", $text);
     <header></header>
     <main>
         <div class="container" id="basket">
-            <ul>
+            <ul class=" list-unstyled ">
                 <?php
                 foreach ($matches as $key) {
                 ?>
-                    <li class=" list-unstyled "><p class="text-light"> <?php echo $key['home'] . '-' . $key['away'] . '|' . $key['score_home'] . '-' . $key['score_away'] ?></p></li>
+                    <li class="<?php echo ($key['score_away'] > $key['score_home']) ? 'yellow' : 'green' ?> ">
+                        <p > <?php echo $key['home'] . '-' . $key['away'] . '|' . $key['score_home'] . '-' . $key['score_away'] ?>
+                        </p>
+                    </li>
                 <?php }
                 ?>
             </ul>
@@ -75,14 +78,14 @@ $paragraph= explode(".", $text);
         </div>
 
         <div class="container">
-           <?php 
-           foreach ($paragraph as $paragraphEl){?>
-           <p>
-        <?php 
-         echo "$paragraphEl ."
-        ?>
-        </p>
-        <?php } ?>
+            <?php
+            foreach ($paragraph as $paragraphEl) { ?>
+                <p>
+                    <?php
+                    echo "$paragraphEl ."
+                    ?>
+                </p>
+            <?php } ?>
         </div>
     </main>
 
