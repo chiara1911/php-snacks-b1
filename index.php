@@ -2,7 +2,7 @@
 
 $matches = [
     'totalScore' => [
-        'home' => 'Virtus Bologna',
+        'home' => 'Carpegna Prosciutto Pesaro',
         'away' => 'Armani Milano',
         'score_home' => '32',
         'score_away' => '41'
@@ -53,7 +53,7 @@ $paragraph= explode(".", $text);
                 <?php
                 foreach ($matches as $key) {
                 ?>
-                    <li> <?php echo $key['home'] . '-' . $key['away'] . '|' . $key['score_home'] . '-' . $key['score_away'] ?></li>
+                    <li class=" list-unstyled "><p class="text-light"> <?php echo $key['home'] . '-' . $key['away'] . '|' . $key['score_home'] . '-' . $key['score_away'] ?></p></li>
                 <?php }
                 ?>
             </ul>

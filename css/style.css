@@ -1,7 +1,7 @@
 
 
 #basket{
-    background-image: url(/img/lega_basket.jpg);
+    background-image: url(../img/lega_basket.jpg);
     background-size: cover;    
     display: block;
     width: 100%;
