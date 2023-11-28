@@ -22,7 +22,7 @@ $age = $_GET["age"];
        <h2> <?php if ((str_contains($email, "@")) && (str_contains($email, "."))  && (strlen($name > 3)) && (is_numeric($age))) {
             echo "Accesso riuscito, <br> Ciao $name ";
         } else {
-            echo "Accesso negato";
+            echo "Accesso negato, <br> controlla i dati inseriti e riprova";
         }
 
         ?>
