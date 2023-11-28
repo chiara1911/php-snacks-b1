@@ -22,11 +22,15 @@ $matches = [
 ];
 // var_dump($matches)
 
-$name = $_GET["name"];
-$email = $_GET["email"];
-$age = $_GET["age"];
+// $name = $_GET["name"];
+// $email = $_GET["email"];
+// $age = $_GET["age"];
 
-var_dump($name, $email, $age);
+// var_dump($name, $email, $age);
+
+$text = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat architecto possimus, repellat inventore voluptatem officiis id omnis ipsum, sint pariatur sapiente sunt ea minus ad iure est. Sint ad, rem obcaecati quaerat quae suscipit minus placeat. Iste, a culpa consequatur necessitatibus alias provident exercitationem veritatis. Deserunt ea nulla sint nam quia vero corporis minus in. Eligendi mollitia dignissimos inventore adipisci?";
+$paragraph= explode(".", $text);
+
 ?>
 
 
@@ -68,7 +72,17 @@ var_dump($name, $email, $age);
                 </div>
                 <button type="submit" class="btn btn-primary">Invia</button>
             </form>
-           
+        </div>
+
+        <div class="container">
+           <?php 
+           foreach ($paragraph as $paragraphEl){?>
+           <p>
+        <?php 
+         echo "$paragraphEl ."
+        ?>
+        </p>
+        <?php } ?>
         </div>
     </main>
 
