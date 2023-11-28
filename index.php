@@ -2,22 +2,52 @@
 
 $matches = [
     'totalScore' => [
-        'home' => 'Carpegna Prosciutto Pesaro',
-        'away' => 'Armani Milano',
-        'score_home' => '92',
-        'score_away' => '41'
+        'home' => 'Banco di Sardegna Sassari',
+        'away' => 'Givova Scafati Basket',
+        'score_home' => '79',
+        'score_away' => '76'
     ],
     [
-        'home' => 'Cantù',
-        'away' => 'Lottomatica',
-        'score_home' => '51',
+        'home' => 'Umana Reyer Venezia',
+        'away' => 'UNAHOTELS Reggio Emilia',
+        'score_home' => '90',
+        'score_away' => '70'
+    ],
+    [
+        'home' => 'EA7 Emporio Armani Milano',
+        'away' => 'Estra Pistoia',
+        'score_home' => '81',
+        'score_away' => '86'
+    ],
+    [
+        'home' => 'Happy Casa Brindisi',
+        'away' => 'Virtus Segafredo Bologna',
+        'score_home' => '83',
+        'score_away' => '75'
+    ],
+    [
+        'home' => 'Generazione Vincente Napoli Basket',
+        'away' => 'Vanoli Basket Cremona',
+        'score_home' => '80',
+        'score_away' => '70'
+    ],
+    [
+        'home' => 'Germani Brescia',
+        'away' => 'Openjobmetis Varese',
+        'score_home' => '116',
         'score_away' => '73'
     ],
     [
-        'home' => 'Real Madrid',
-        'away' => 'Olympiacos',
-        'score_home' => '78',
-        'score_away' => '81'
+        'home' => 'Carpegna Prosciutto Pesaro',
+        'away' => 'NutriBullet Treviso Basket',
+        'score_home' => '95',
+        'score_away' => '76'
+    ],
+    [
+        'home' => 'Bertram Derthona Tortona',
+        'away' => 'Dolomiti Energia Trentino',
+        'score_home' => '83',
+        'score_away' => '80'
     ],
 ];
 // var_dump($matches)
@@ -47,37 +77,48 @@ $paragraph = explode(".", $text);
 
 <body>
     <header></header>
-    <main>
-        <div class="container" id="basket">
-            <ul class=" list-unstyled ">
-                <?php
-                foreach ($matches as $key) {
-                ?>
-                    <li class="<?php echo ($key['score_away'] > $key['score_home']) ? 'yellow' : 'green' ?> ">
-                        <p > <?php echo $key['home'] . '-' . $key['away'] . '|' . $key['score_home'] . '-' . $key['score_away'] ?>
-                        </p>
-                    </li>
-                <?php }
-                ?>
-            </ul>
+    <main class="mt-2">
+        <div class="container pt-5 " id="basket">
+            <div class="row">
+                <h6 class="text-uppercase text-light"> calendario </h6>
+                <h6 class="text-uppercase text-light"> 9a giornata </h6>
+                <div class="col-6">
+                    <ul class=" list-unstyled m-auto">
+                        <?php
+                        foreach ($matches as $key) {
+                        ?>
+                            <li class="<?php echo ($key['score_away'] > $key['score_home']) ? 'red' : 'green' ?> ">
+                                <p> <?php echo $key['home'] . '-' . $key['away'] . '  |  ' . $key['score_home'] . '-' . $key['score_away'] ?>
+                                </p>
+                            </li>
+                        <?php }
+                        ?>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="container">
+        <div class="container p-2" id="secondEl">
+            <h4 class=" text-uppercase text-center shadow-lg ">login per accedere al tuo profilo privato</h4>
             <form action="second.php" method="GET">
                 <div class="mb-3">
                     <label for="name" class="form-label"> Name</label>
-                    <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-                </div>
-                <div class="mb-3">
+                    <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">               
                     <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="email" name="email">
-                    <label for="age" class="form-label">Age</label>
-                    <input type="text" class="form-control" id="age" name="age">
+                    <label for="age" class="form-label ">Age</label>
+                    <input type="text" class="form-control w-25" id="age" name="age">
                 </div>
-                <button type="submit" class="btn btn-primary">Invia</button>
+                <button type="submit" class="btn btn-success">Invia</button>
             </form>
         </div>
 
-        <div class="container">
+        <div class="container p-2" id="paragrafo">
+            <div class="opacity-50">
+                <h6 class=" text-uppercase ">testo originale</h6>
+               <p><?php echo $text ?></p> 
+            </div>
+            <div>
+                <h6 class="text-uppercase"> testo modificato</h6></h6>
             <?php
             foreach ($paragraph as $paragraphEl) { ?>
                 <p>
@@ -86,6 +127,9 @@ $paragraph = explode(".", $text);
                     ?>
                 </p>
             <?php } ?>
+
+            </div>
+            
         </div>
     </main>
 
